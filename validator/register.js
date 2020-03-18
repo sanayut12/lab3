@@ -7,8 +7,8 @@ const validation = (schema) =>{
             email: Joi.string() .min(6) .required() .email(),
             password: Joi.string() .min(6) .max(15).required(),
             confirm_password: Joi.ref('password'),
- // confirm_password: Joi.any().valid(Joi.ref('password')).required()
- // .options({ language: { any: { allowOnly: 'mustmatch password' } } })
+            // confirm_password: Joi.any().valid(Joi.ref('password')).required()
+            // .options({ language: { any: { allowOnly: 'mustmatch password' } } })
             });
 
             const result = schema.validate(req.body);
